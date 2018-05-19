@@ -169,7 +169,7 @@ exports.randomplay = (req, res, next) => {
     models.quiz.count({where: condicion})
     .then(count => {
         if (count === 0) {
-            let score = req.session.randomPlay.length
+            let score = req.session.randomPlay.length;
             delete req.session.randomPlay;
             res.render('quizzes/random_nomore', {
             score : score
